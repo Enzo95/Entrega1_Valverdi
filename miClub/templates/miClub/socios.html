@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block dinamico %}
-
-    <h1>Socios</h1>
+    
+    <a role="button" class="btn btn-success" href="{% url 'Alta Socio' %}" target="_blank">Dar de Alta</a>
+    <a role="button" class="btn btn-outline-dark" href="{% url 'Buscar Socio' %}" target="_blank">Buscar Socio</a>
         
 {% endblock %}

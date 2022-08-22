@@ -1,0 +1,14 @@
+{% extends 'miClub/inicio.html' %}
+
+{% load static %}
+
+{% block dinamico %}
+
+<form action="/miClub/buscar" method="GET"> 
+
+    <input type="number" name="nº socio" id="n_socio">
+    <input type="submit" value="Buscar">
+
+</form>
+
+{% endblock %}
