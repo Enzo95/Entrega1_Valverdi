@@ -6,3 +6,19 @@ from miClub import models
 def inicio(request):
 
     return render(request,"miClub/inicio.html")
+
+def directivos(request):
+
+    return render(request,"miClub/directivos.html")
+
+def socios(request):
+
+    return render(request,"miClub/socios.html")
+
+def disciplinas(request):
+
+    return render(request,"miClub/disciplinas.html")
+
+def cuota(request):
+
+    return render(request,"miClub/cuota.html")

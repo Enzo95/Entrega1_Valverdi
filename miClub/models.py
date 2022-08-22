@@ -16,7 +16,7 @@ class Socios(models.Model):
     fecha_ingreso = models.DateField()
     email = models.EmailField()
 
-class Diciplina(models.Model):
+class Disciplina(models.Model):
 
     deporte = models.CharField(max_length=30)
     lugar = models.CharField(max_length=30)
