@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from miClub import models
 from miClub import forms
 
@@ -53,6 +52,8 @@ def buscarSocioFormulario(request):
 
 def buscar(request):
 
-    respuesta = f"Busqueda del socio nº: {request.GET['nº socio']}"
+    socio = models.Socios.objects.filter(n_socio=request.GET['nº socio'])
+    contexto = {"socios":socio.values()}
 
-    return HttpResponse(respuesta)
+    return render(request,"miClub/resultadoSocio.html",contexto)
+#socio.values()[0]['nombre']+' '+socio.values()[0]['apellido']

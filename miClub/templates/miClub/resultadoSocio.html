@@ -1,0 +1,49 @@
+{% extends 'miClub/inicio.html' %}
+
+{% load static %}
+
+{% block dinamico %}
+
+    {% for x in socios %}
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary justify-content-center" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Ver datos de socio nº {{ x.n_socio }}
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Socio nº {{ x.n_socio }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <dl class="row">
+                        <dt class="col-sm-3">Nombre</dt>
+                        <dd class="col-sm-9">{{ x.nombre }}</dd>
+                      
+                        <dt class="col-sm-3">Apellido</dt>
+                        <dd class="col-sm-9">{{ x.apellido }}</dd>
+                      
+                        <dt class="col-sm-3">Nº de Socio</dt>
+                        <dd class="col-sm-9">{{ x.n_socio }}</dd>
+                      
+                        <dt class="col-sm-3">Fecha de Ingreso</dt>
+                        <dd class="col-sm-9">{{ x.fecha_ingreso }}</dd>
+                      
+                        <dt class="col-sm-3">Email</dt>
+                        <dd class="col-sm-9">{{ x.email }}</dd>
+                      </dl>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+    {% endfor %}
+
+{% endblock %}
