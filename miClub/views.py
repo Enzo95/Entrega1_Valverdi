@@ -39,7 +39,7 @@ def altaSocioFormulario(request):
                                   email=informacion['email'])
             socio.save()
 
-            return render(request, "miClub/")
+            return render(request, "miClub/inicio.html")
     
     else:
         miFormulario = forms.AltaSocioForm()
